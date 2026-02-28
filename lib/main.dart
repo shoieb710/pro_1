@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-
-
-
-class MyApp extends StatefulWidget {
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pro_1/cubit/homecubit.dart';
+import 'package:pro_1/view/screen/homepage.dart';
+void main() {
+  runApp(const MyApp());
+}
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
   Widget build(BuildContext context) {
-    return Container();
+    return BlocProvider(
+      create:(context) => HomeCubit(),
+      child: MaterialApp(home: Homepage(),),
+      );
   }
 }
