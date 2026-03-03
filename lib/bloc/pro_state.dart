@@ -12,7 +12,6 @@ class IntialCounter extends Homestate{
    @override
   List<Object?> get props => [counter];
 }
-
 class IncrementCounter extends Homestate{
    const IncrementCounter(super.counter);
    @override
@@ -23,4 +22,3 @@ class DecrementCounter extends Homestate{
    @override
   List<Object?> get props => [counter];
 }
-

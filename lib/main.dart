@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pro_1/core/constant/theme.dart';
 import 'package:pro_1/cubit/homecubit.dart';
 import 'package:pro_1/view/screen/homepage.dart';
 void main() {
-  runApp(const MyApp());
+    runApp(BlocProvider(
+    create: (_) => ThemeCubit(),
+    child: const MyApp(),
+  ));
 }
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,7 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create:(context) => HomeCubit(),
-      child: MaterialApp(home: Homepage(),),
+      child:BlocBuilder<ThemeCubit,ThemeData>(builder:(context,theme) {
+        return MaterialApp(
+        theme: theme,
+        home: Homepage(),);
+      } ,) 
       );
   }
 }

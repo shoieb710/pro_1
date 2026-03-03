@@ -5,3 +5,10 @@ class OnBoaringModel {
   OnBoaringModel({this.body,this.image,this.title});
 
 }
+class Home{
+  final String? username;
+  final String? password;
+  
+  Home({this.username,this.password});
+
+}
