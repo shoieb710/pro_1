@@ -4,8 +4,8 @@ import 'package:pro_1/bloc/pro_bloc.dart';
 import 'package:pro_1/bloc/pro_event.dart';
 import 'package:pro_1/core/constant/colors.dart';
 import 'package:pro_1/core/constant/theme.dart';
-import 'package:pro_1/cubit/homecubit.dart';
-import 'package:pro_1/cubit/homestate.dart';
+import 'package:pro_1/cubit/procubit.dart';
+import 'package:pro_1/cubit/prostate.dart';
 import 'package:pro_1/view/wedget/counterbutton.dart';
 import 'package:pro_1/view/wedget/textcounter.dart';
 

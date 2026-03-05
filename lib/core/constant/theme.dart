@@ -23,8 +23,11 @@ class AppTheme {
 
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
+        minimumSize: Size(double.infinity, 60),
         backgroundColor: AppColors.primary,
         foregroundColor: Colors.white,
+        shadowColor: AppColors.secondary,
+        elevation: 5,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
@@ -35,6 +38,12 @@ class AppTheme {
       headlineLarge: TextStyle(
         color: AppColors.darkText,
         fontWeight: FontWeight.bold,
+        fontSize: 25
+      ),
+      headlineMedium:  TextStyle(
+        color: AppColors.grayText,
+        fontWeight: FontWeight.normal,
+        fontSize: 18
       ),
       bodyLarge: TextStyle(
         color: AppColors.darkText,
@@ -43,6 +52,7 @@ class AppTheme {
         color: AppColors.grayText,
       ),
     ),
+    
 
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedItemColor: AppColors.primary,
@@ -72,6 +82,18 @@ class AppTheme {
     backgroundColor: AppColors.darkSurface,
     foregroundColor: Colors.white,
   ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        minimumSize: Size(double.infinity, 60),
+        backgroundColor: AppColors.primary,
+        foregroundColor: Colors.white,
+        shadowColor: AppColors.darkTextSecondary,
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
+    ),
 
   cardTheme: CardThemeData(
     color: AppColors.darkCard,
@@ -85,7 +107,13 @@ class AppTheme {
     headlineLarge: TextStyle(
       color: AppColors.darkTextPrimary,
       fontWeight: FontWeight.bold,
+      fontSize: 25
     ),
+          headlineMedium:  TextStyle(
+        color: AppColors.grayText,
+        fontWeight: FontWeight.normal,
+        fontSize: 18
+      ),
     bodyLarge: TextStyle(
       color: AppColors.darkTextPrimary,
     ),

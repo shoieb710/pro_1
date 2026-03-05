@@ -1,14 +1,21 @@
 
+import 'package:pro_1/core/constant/imageassets.dart';
+import 'package:pro_1/data/model/model.dart';
 
+List<Onboarding> onBoardingList=[
+  Onboarding(
+    title: "ابحث عن افضل الحرفيين في ثوان",
+    subtitle: "حرفي يوصلك بامهر العمال و الصنايعيه في منطقتك بضغطه زر . جوده مضمونه وسرعه في التنفيذ",
+  image: ImageAssets.onbordingImagetwo ),
 
+    Onboarding(
+    title: "ابحث عن افضل الحرفيين في ثوان",
+    subtitle: "حرفي يوصلك بامهر العمال و الصنايعيه في منطقتك بضغطه زر . جوده مضمونه وسرعه في التنفيذ",
+  image: ImageAssets.onbordingImageOne ),
 
-// List<OnBoaringModel> onBoardingList=[
-//   OnBoaringModel(title: "2".tr,body: "6".tr,
-//   image:ImageAssets.onbordingImageOne ),
-//     OnBoaringModel(title: "3".tr,body: "7".tr,
-//   image:ImageAssets.onbordingImageTwo ),
-//     OnBoaringModel(title: "4".tr,body: "8".tr,
-//   image:ImageAssets.onbordingImageThree ),
-//     OnBoaringModel(title: "5".tr,body: "9".tr,
-//   image:ImageAssets.onbordingImageFour )
-// ];
+    Onboarding(
+    title: "ابحث عن افضل الحرفيين في ثوان",
+    subtitle: "حرفي يوصلك بامهر العمال و الصنايعيه في منطقتك بضغطه زر . جوده مضمونه وسرعه في التنفيذ",
+  image: ImageAssets.onbordingImageOne ),
+ 
+];
