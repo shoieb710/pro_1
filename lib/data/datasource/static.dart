@@ -6,16 +6,17 @@ List<Onboarding> onBoardingList=[
   Onboarding(
     title: "ابحث عن افضل الحرفيين في ثوان",
     subtitle: "حرفي يوصلك بامهر العمال و الصنايعيه في منطقتك بضغطه زر . جوده مضمونه وسرعه في التنفيذ",
+  image: ImageAssets.onbordingImageOne ),
+
+    Onboarding(
+    title: "اختر الصنايعي المناسب",
+    subtitle: "تصفح التقييمات وآراء العملاء،واختر الصنايعي الذي يناسب احتياجاتك بثقة",
   image: ImageAssets.onbordingImagetwo ),
 
     Onboarding(
-    title: "ابحث عن افضل الحرفيين في ثوان",
-    subtitle: "حرفي يوصلك بامهر العمال و الصنايعيه في منطقتك بضغطه زر . جوده مضمونه وسرعه في التنفيذ",
-  image: ImageAssets.onbordingImageOne ),
+    title: "احجز الخدمة بسهولة",
+    subtitle: "احجز موعدك وتواصل مع الصنايعي مباشرة،وتابع تنفيذ الخدمة خطوة بخطوة",
 
-    Onboarding(
-    title: "ابحث عن افضل الحرفيين في ثوان",
-    subtitle: "حرفي يوصلك بامهر العمال و الصنايعيه في منطقتك بضغطه زر . جوده مضمونه وسرعه في التنفيذ",
-  image: ImageAssets.onbordingImageOne ),
+  image: ImageAssets.onbordingImagethree ),
  
 ];

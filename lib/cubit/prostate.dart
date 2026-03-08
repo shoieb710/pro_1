@@ -1,4 +1,7 @@
+
+
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 
 sealed class Homestate extends Equatable {
   final int counter;
@@ -28,20 +31,20 @@ class DecrementCounter extends Homestate {
 
 sealed class Onboardingstate extends Equatable {
   final int currentPage;
-
-  const Onboardingstate(this.currentPage);
+  final PageController pageController;
+   const Onboardingstate(this.currentPage,  this.pageController);
   @override
   List<Object?> get props => [];
 }
 
 class IntialOnboarding extends Onboardingstate {
-  const IntialOnboarding(super.currentPage);
+   const IntialOnboarding(super.currentPage,  super.pageController);
   @override
-  List<Object?> get props => [currentPage];
+  List<Object?> get props => [currentPage,pageController];
 }
 
 class Curruntpage extends Onboardingstate {
-  const Curruntpage(super.currentPage);
+   const Curruntpage(super.currentPage,super.pageController);
   @override
-  List<Object?> get props => [currentPage];
+  List<Object?> get props => [currentPage,pageController];
 }

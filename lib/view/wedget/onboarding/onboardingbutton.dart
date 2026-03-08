@@ -10,8 +10,9 @@ class Onboardingbutton extends StatelessWidget {
   Widget build(BuildContext context) {
     return   
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 40),
-                  child: ElevatedButton(
+                  padding: const EdgeInsets.symmetric(vertical: 25,horizontal: 12),
+                  child: 
+                  ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       foregroundColor:  foregroundColor,
                       backgroundColor: backgroundColor

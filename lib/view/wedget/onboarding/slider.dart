@@ -4,13 +4,16 @@ import 'package:pro_1/core/constant/colors.dart';
 import 'package:pro_1/cubit/procubit.dart';
 
 class OnboardingSlider extends StatelessWidget {
-  const OnboardingSlider({super.key, required this.onBoardingList});
+  const OnboardingSlider({super.key, required this.onBoardingList,required this.controller});
   final List<dynamic> onBoardingList;
+  final PageController? controller;
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      flex: 8,
+      flex: 
+      2,
       child: PageView.builder(
+        controller: controller,
         onPageChanged: (value) {
           context.read<OnboardingCubit>().onpageChanged(value);
         },
@@ -18,7 +21,7 @@ class OnboardingSlider extends StatelessWidget {
         itemBuilder: (context, i) => Column(
           children: [
             Card(
-              margin: EdgeInsets.only(top: 80, left: 30, right: 30),
+              margin: EdgeInsets.only(top: 100, left: 30, right: 30),
               shadowColor: AppColors.accentCopper,
               elevation: 10,
               shape: RoundedRectangleBorder(
@@ -29,7 +32,7 @@ class OnboardingSlider extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
                 child: SizedBox(
                   width: double.infinity,
-                  height: 260,
+                  height: 340,
                   child: Image.asset( onBoardingList[i].image!,
                   fit: BoxFit.fill,
                   filterQuality: FilterQuality.high,
@@ -37,7 +40,7 @@ class OnboardingSlider extends StatelessWidget {
                 )),
             ),
             Container(
-              height: 100,
+              height: 70,
               padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
               alignment: Alignment.center,
               child: Text(
