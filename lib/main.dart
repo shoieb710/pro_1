@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pro_1/core/constant/theme.dart';
 import 'package:pro_1/cubit/procubit.dart';
-import 'package:pro_1/view/screen/onboaarding.dart';
+import 'package:pro_1/view/screen/homepage.dart';
+
 void main() {
     runApp(BlocProvider(
     create: (_) => ThemeCubit(),
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       child:BlocBuilder<ThemeCubit,ThemeData>(builder:(context,theme) {
         return MaterialApp(
         theme: theme,
-        home: OnBoaarding(),
+        home: Homepage(),
         );
       } ,) 
       );
