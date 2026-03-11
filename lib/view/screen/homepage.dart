@@ -47,10 +47,12 @@ class _HomepageState extends State<Homepage> {
             context.read<ProBloc>().add(DecrementEvent());
             context.read<HomeCubit>().decrement();  },),
            SizedBox(height: 100,),
-          Center(
-        child: ElevatedButton(
-          onPressed: () => themeCubit.toggleTheme(),
-          child: const Text('Toggle Theme'),))
+          Expanded(
+            child: Center(
+                    child: ElevatedButton(
+            onPressed: () => themeCubit.toggleTheme(),
+            child: const Text('Toggle Theme'),)),
+          )
         ],
       )],
     ),
