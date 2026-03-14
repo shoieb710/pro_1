@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pro_1/core/constant/theme.dart';
 import 'package:pro_1/cubit/procubit.dart';
 import 'package:pro_1/view/screen/homepage.dart';
+import 'package:pro_1/view/screen/splashscreen.dart';
 
 
 
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       child:BlocBuilder<ThemeCubit,ThemeData>(builder:(context,theme) {
         return MaterialApp(
         theme: theme,
-        home: Homepage(),
+        home: Homescreen(),
         );
       } ,) 
       );
