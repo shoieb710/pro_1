@@ -72,6 +72,16 @@ class _HomepageState extends State<Homepage> {
               ),
             ],
           ),
+           Counterbutton(icon: Icon(Icons.remove), onPressed: () {
+            context.read<ProBloc>().add(DecrementEvent());
+            context.read<HomeCubit>().decrement();  },),
+           SizedBox(height: 100,),
+          Expanded(
+            child: Center(
+                    child: ElevatedButton(
+            onPressed: () => themeCubit.toggleTheme(),
+            child: const Text('Toggle Theme'),)),
+          )
         ],
       ),
     );
