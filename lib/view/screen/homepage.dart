@@ -59,7 +59,6 @@ class _HomepageState extends State<Homepage> {
                 onPressed: () {
                   context.read<ProBloc>().add(DecrementEvent());
                   context.read<HomeCubit>().decrement();
-                  
                 },
               ),
               SizedBox(height: 100),
