@@ -2,17 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pro_1/cubit/prostate.dart';
 import 'package:pro_1/data/datasource/static.dart';
+import 'package:pro_1/view/screen/workerhomepage.dart';
 
-class HomeCubit extends Cubit<Homestate> {
-  HomeCubit() : super(IntialCounter(0));
+class HomescreenCubit extends Cubit<Homescreenstate> {
+  HomescreenCubit() : super(IntialHomescreen(3,[
+    const WorkerHomepage(),
+    const WorkerHomepage(),
+    const WorkerHomepage(),
+    const WorkerHomepage(),
+  ]));
+  void updateCurrntPage(int curr){
+    emit(Currentpage(curr, [
+    const WorkerHomepage(),
+    const WorkerHomepage(),
+    const WorkerHomepage(),
+    const WorkerHomepage(),
+  ]));
 
-  void increment() {
-    emit(IncrementCounter(state.counter + 1));
   }
 
-  void decrement() {
-    emit(DecrementCounter(state.counter - 1));
-  }
 }
 
 class OnboardingCubit extends Cubit<Onboardingstate> {
@@ -35,4 +43,15 @@ class OnboardingCubit extends Cubit<Onboardingstate> {
     current=index;
     emit(Curruntpage(current,state.pageController));
   }
+}
+
+
+class WorkerHomepageCubit extends Cubit<WorkerHomepagestate> {
+  WorkerHomepageCubit() : super(IntialWorkerHomepage(false));
+
+  void changeStatus(bool status){
+    emit(ChangeWorkerStatus(status));
+  }
+
+
 }

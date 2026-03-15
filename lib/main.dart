@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pro_1/core/constant/theme.dart';
 import 'package:pro_1/cubit/procubit.dart';
-import 'package:pro_1/view/screen/homepage.dart';
-import 'package:pro_1/view/screen/splashscreen.dart';
+import 'package:pro_1/view/screen/homescreen.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 
 
@@ -21,11 +21,22 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       
        providers: [
-        BlocProvider(create: (context) => HomeCubit(),),
-        BlocProvider(create: (context) => OnboardingCubit(),)
+        BlocProvider(create: (context) => HomescreenCubit(),),
+        BlocProvider(create: (context) => OnboardingCubit(),),
+        BlocProvider(create: (context) => WorkerHomepageCubit())
        ],
       child:BlocBuilder<ThemeCubit,ThemeData>(builder:(context,theme) {
         return MaterialApp(
+          locale:  Locale('ar'),
+          supportedLocales: [
+        Locale('ar'),
+      ],
+      localizationsDelegates: [
+  GlobalMaterialLocalizations.delegate,
+  GlobalWidgetsLocalizations.delegate,
+  GlobalCupertinoLocalizations.delegate,
+],
+     
         theme: theme,
         home: Homescreen(),
         );

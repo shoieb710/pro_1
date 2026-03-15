@@ -16,9 +16,10 @@ class AppTheme {
     ),
 
     appBarTheme: const AppBarTheme(
-      backgroundColor: AppColors.primary,
-      foregroundColor: Colors.white,
-      elevation: 0,
+      backgroundColor: Colors.white,
+      foregroundColor: Colors.black,
+          shadowColor: AppColors.grayText,
+      elevation: 10,
     ),
 
     elevatedButtonTheme: ElevatedButtonThemeData(
@@ -81,6 +82,7 @@ class AppTheme {
   appBarTheme: const AppBarTheme(
     backgroundColor: AppColors.darkSurface,
     foregroundColor: Colors.white,
+        shadowColor: AppColors.grayText,
   ),
       elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(

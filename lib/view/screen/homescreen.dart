@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:pro_1/core/constant/colors.dart';
 import 'package:pro_1/core/constant/imageassets.dart';
-
+import 'package:pro_1/cubit/procubit.dart';
+import 'package:pro_1/cubit/prostate.dart';
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -13,27 +16,82 @@ class Homescreen extends StatefulWidget {
 class _HomescreenState extends State<Homescreen> {
   @override
   Widget build(BuildContext context) {
-    // final themeCubit = context.read<ThemeCubit>();
     return Scaffold(
+      // backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        shadowColor: AppColors.grayText,
-        elevation: 10,
-        leading: Icon(Icons.add_ic_call),
-        toolbarHeight: 80,
-         actions: [
-            Container(
-              height: 60,
-              width: 75,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(
-                    ImageAssets.logo,
-                  )),
-                  shape: BoxShape.circle),
-            )
+        leading: Padding(
+          padding: const EdgeInsets.only(right: 20),
+          child: Container(
+            height: 60,
+
+            decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage(ImageAssets.logo)),
+              shape: BoxShape.circle,
+            ),
+          ),
+        ),
+        actionsPadding: EdgeInsets.all(10),
+        leadingWidth: 75,
+
+        titleSpacing: 10,
+        title: Column(
+          children: [
+            SizedBox(height: 10),
+            Text("حرفي", style: Theme.of(context).textTheme.headlineLarge),
+            Text("اهلا احمد", style: Theme.of(context).textTheme.bodyMedium),
           ],
-        title: Text("text counter")),
-      body: Container()
+        ),
+        toolbarHeight: 80,
+        actions: [Icon(Iconsax.notification5)],
+      ),
+      bottomNavigationBar: BlocBuilder<HomescreenCubit, Homescreenstate>(
+        builder: (context, state) {
+          return BottomNavigationBar(
+            elevation: 10,
+            currentIndex: state.currentpage,
+            iconSize: 25,
+            selectedFontSize: 18,
+            selectedItemColor: AppColors.secondary,
+            showUnselectedLabels: true,
+            selectedIconTheme: IconThemeData(
+              color: AppColors.secondary,
+              size: 30,
+            ),
+            onTap: (value) {
+              context.read<HomescreenCubit>().updateCurrntPage(value);
+            },
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Iconsax.element_4),
+
+                label: "الرئيسية",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Iconsax.money_recive),
+
+                label: "مهامي",
+              ),
+
+              BottomNavigationBarItem(
+                icon: Icon(Iconsax.clipboard_tick),
+
+                label: "أرباحي",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Iconsax.setting_2),
+
+                label: "الأعدادات",
+              ),
+            ],
+          );
+        },
+      ),
+
+      body: BlocBuilder<HomescreenCubit, Homescreenstate>(
+        builder: (context, state) {
+          return state.listpage.elementAt(state.currentpage);
+        },
+      ),
     );
   }
 }

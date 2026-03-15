@@ -3,31 +3,49 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-sealed class Homestate extends Equatable {
-  final int counter;
 
-  const Homestate(this.counter);
+sealed class Homescreenstate extends Equatable {
+  final int currentpage;
+  final List<Widget> listpage ;
+   const Homescreenstate(this.currentpage, this.listpage);
   @override
   List<Object?> get props => [];
 }
 
-class IntialCounter extends Homestate {
-  const IntialCounter(super.counter);
+class IntialHomescreen extends Homescreenstate {
+   const IntialHomescreen(super.counter, super.listpage);
   @override
-  List<Object?> get props => [counter];
+  List<Object?> get props => [currentpage,listpage];
+}
+class Currentpage extends Homescreenstate {
+   const Currentpage(super.counter, super.listpage);
+  @override
+  List<Object?> get props => [currentpage,listpage];
 }
 
-class IncrementCounter extends Homestate {
-  const IncrementCounter(super.counter);
+
+
+sealed class  WorkerHomepagestate extends Equatable {
+  final bool avelable;
+  
+   const WorkerHomepagestate(this.avelable );
   @override
-  List<Object?> get props => [counter];
+  List<Object?> get props => [];
 }
 
-class DecrementCounter extends Homestate {
-  const DecrementCounter(super.counter);
+class IntialWorkerHomepage extends WorkerHomepagestate {
+   const IntialWorkerHomepage(super.avelable, );
   @override
-  List<Object?> get props => [counter];
+  List<Object?> get props => [avelable];
 }
+class ChangeWorkerStatus extends WorkerHomepagestate {
+   const ChangeWorkerStatus(super.avelable, );
+  @override
+  List<Object?> get props => [avelable];
+}
+
+
+
 
 sealed class Onboardingstate extends Equatable {
   final int currentPage;
